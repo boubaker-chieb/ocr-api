@@ -6,13 +6,16 @@ import {
     Post,
     Query,
     Route,
-    SuccessResponse,
+    SuccessResponse
   } from "tsoa";
-import { User } from "../models/user.model";
-import { UsersService } from "../services/user.servide";
+import { User } from "../../models/user.model";
+import { UsersService } from "../../services/user.servide";
   
+/**
+ * User controller
+ */
   @Route("users")
-  export class UsersController {
+  export class UsersController extends Controller {
     @Get("{userId}")
     public async getUser(
       @Path() userId: number,
@@ -26,6 +29,7 @@ import { UsersService } from "../services/user.servide";
     public async createUser(
       @Body() requestBody: User
     ): Promise<void> {
+      this.setStatus(201);
       new UsersService().create(requestBody);
       return;
     }

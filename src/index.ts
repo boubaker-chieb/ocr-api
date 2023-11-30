@@ -4,8 +4,9 @@ import express from "express";
 import { ExceptionsHandler } from "./middlewares/exceptions.handler";
 import { UnknownRoutesHandler } from "./middlewares/unknownRoutes.handler";
 import { config } from "./config";
-import routes from "./routes/routes";
 import morgan from "morgan";
+import userRouter from "./controllers/users/users.routes";
+import valuesRouter from "./controllers/values/values.routes";
 
 /**
  * Genarated swagger path
@@ -46,7 +47,9 @@ app.use(
 /**
  * Add Routes 
  */
-app.use(routes)
+app.use(valuesRouter)
+app.use(userRouter)
+
 
 /**
  * Homepage (uniquement necessaire pour cette demo)
