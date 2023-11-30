@@ -1,9 +1,16 @@
+import swaggerUi from "swagger-ui-express";
 import cors from "cors";
 import express from "express";
-import { PetsController } from "./ressources/pets/pets.controller";
 import { ExceptionsHandler } from "./middlewares/exceptions.handler";
 import { UnknownRoutesHandler } from "./middlewares/unknownRoutes.handler";
 import { config } from "./config";
+import routes from "./routes/routes";
+import morgan from "morgan";
+
+/**
+ * Genarated swagger path
+ */
+const swaggerDocument = require("../swagger.json")
 
 /**
  * Create app.
@@ -21,14 +28,31 @@ app.use(express.json());
 app.use(cors());
 
 /**
- * Toutes les routes CRUD pour les animaux seronts préfixées par `/pets`
+ * Configure tiny
  */
-app.use('/pets', PetsController)
+app.use(morgan("tiny"));
+app.use(express.static("public"));
+
+/**
+ * Add swagger
+ */
+app.get('/swagger/swagger.json', (_req, res) => res.json(swaggerDocument));
+app.use(
+    "/swagger",
+    swaggerUi.serve,
+    swaggerUi.setup(swaggerDocument)
+  );
+
+/**
+ * Add Routes 
+ */
+app.use(routes)
 
 /**
  * Homepage (uniquement necessaire pour cette demo)
  */
 app.get('/', (req, res) => res.send('🏠'))
+
 
 /**
  * Pour toutes les autres routes non définies, on retourne une erreur
