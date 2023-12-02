@@ -1,0 +1,1 @@
+export {OcrDto}  from '~/dtos/ocr.dto';

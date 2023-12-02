@@ -5,8 +5,7 @@ import { ExceptionsHandler } from "./middlewares/exceptions.handler";
 import { UnknownRoutesHandler } from "./middlewares/unknownRoutes.handler";
 import { config } from "./config";
 import morgan from "morgan";
-import userRouter from "./controllers/users/users.routes";
-import valuesRouter from "./controllers/values/values.routes";
+import ocrRouter from "./routes/ocr.routes";
 
 /**
  * Genarated swagger path
@@ -47,8 +46,7 @@ app.use(
 /**
  * Add Routes 
  */
-app.use(valuesRouter)
-app.use(userRouter)
+app.use(ocrRouter)
 
 
 /**
