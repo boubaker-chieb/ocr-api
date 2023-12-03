@@ -1,21 +1,21 @@
 import { ApiException } from '~~/types/exception'
 
 /**
- * Classe générique qui sert à créer des erreurs HTTP (ici 400 et 404)
- *
- * On précise que notre classe doit correspondre à l'interface `ApiException`
- *
- * Les mots clés `readonly` servent de raccourci pour `this.propriété = valeur`,
- * ils nous empêchent également de mofifier ces valeurs par la suite.
- *
- * Ici `this.error = error` et `this.status = status`
- */
+  * Generic class used to create HTTP errors (here 400 and 404)
+  *
+  * We specify that our class must correspond to the `ApiException` interface
+  *
+  * The `readonly` keywords serve as shorthand for `this.property = value`,
+  * they also prevent us from changing these values later.
+  *
+  * Here `this.error = error` and `this.status = status`
+  */
 class Exception implements ApiException {
   constructor(readonly error: any, readonly status: number) {}
 }
 
 /**
- * Création d'une 404
+ * Create 404 Exception
  */
 export class NotFoundException extends Exception {
   /**
@@ -27,7 +27,7 @@ export class NotFoundException extends Exception {
 }
 
 /**
- * Création d'une 400
+ * Create 400 Exception
  */
 export class BadRequestException extends Exception {
   /**

@@ -5,5 +5,9 @@
     "spec": {
       "outputDirectory": "./",
       "specVersion": 3
+    },
+    "routes": {
+      "routesDir": "./src",
+      "controllers": "./src/controllers/*.ts"
     }
   }

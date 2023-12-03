@@ -5,7 +5,7 @@ import { ExceptionsHandler } from "./middlewares/exceptions.handler";
 import { UnknownRoutesHandler } from "./middlewares/unknownRoutes.handler";
 import { config } from "./config";
 import morgan from "morgan";
-import ocrRouter from "./routes/ocr.routes";
+import { RegisterRoutes } from "./routes";
 
 /**
  * Genarated swagger path
@@ -46,7 +46,7 @@ app.use(
 /**
  * Add Routes 
  */
-app.use(ocrRouter)
+RegisterRoutes(app);
 
 
 /**
@@ -69,4 +69,4 @@ app.use(ExceptionsHandler)
 /**
  * On demande à Express d'ecouter les requêtes sur le port défini dans la config
  */
-app.listen(config.API_PORT, () => console.log('Silence, ça tourne.'))
+app.listen(config.API_PORT, () => console.log(`Server is running on http://localhost:${config.API_PORT}`))
