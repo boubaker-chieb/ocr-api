@@ -9,6 +9,7 @@ import { NextFunction, Request, Response } from 'express'
  * @returns 
  */
 export const ExceptionsHandler = (err: any, req: Request, res: Response, next: NextFunction) => {
+  console.log(err)
   /**
    * See "The default error handler" in the official doc indicated above
    */

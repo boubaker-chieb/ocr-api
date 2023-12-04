@@ -11,6 +11,6 @@ export class OcrController extends Controller {
   ): Promise<any> {
     const ocrService = new OcrService();
     console.log(file)
-    return await ocrService.scanImage(file.path, language);
+    return await ocrService.scanImage(file, language);
   }
 }
