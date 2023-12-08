@@ -1,5 +1,6 @@
+import { OcrDto } from "src/dtos";
+import { toOcrDTo } from "src/dtos/ocr.dto";
 import { RecognizeResult, createWorker } from "tesseract.js";
-import { OcrDto, toOcrDTo } from "~/dtos/ocr.dto";
 
 export class OcrService {
   public async scanImage(file: Express.Multer.File, language = 'eng'): Promise<OcrDto> {

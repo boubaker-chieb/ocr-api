@@ -15,8 +15,6 @@
       "outDir": "./dist",
       "strictPropertyInitialization": false,
       "paths": {
-        "~/*": ["./src/*"],
-        "~~/*": ["./*"],
         "tsoa": ["node_modules/tsoa/dist"]
       }
     },
