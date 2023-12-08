@@ -55,6 +55,8 @@ RegisterRoutes(app);
 app.get('/', (req, res) => res.send('🏠'))
 
 
+app.use(express.static('public'))
+
 /**
  * Pour toutes les autres routes non définies, on retourne une erreur
  */
