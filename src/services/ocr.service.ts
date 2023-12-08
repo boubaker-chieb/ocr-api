@@ -5,7 +5,6 @@ export class OcrService {
   public async scanImage(file: Express.Multer.File, language = 'eng'): Promise<OcrDto> {
     const worker = await createWorker(language);
     const ret: RecognizeResult = await worker.recognize(file.buffer);
-    console.log(ret);
     await worker.terminate();
     return toOcrDTo(ret);
   }

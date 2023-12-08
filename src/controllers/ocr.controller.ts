@@ -1,7 +1,7 @@
 import { Route, Controller, Post, UploadedFile, Tags, Query } from "tsoa";
 import { OcrService } from "../services/ocr.service";
 
-@Route("Ocr")
+@Route("api/ocr")
 @Tags("Ocr")
 export class OcrController extends Controller {
   @Post("scan-image")

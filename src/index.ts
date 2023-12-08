@@ -70,3 +70,5 @@ app.use(ExceptionsHandler)
  * On demande à Express d'ecouter les requêtes sur le port défini dans la config
  */
 app.listen(config.API_PORT, () => console.log(`Server is running on http://localhost:${config.API_PORT}`))
+
+export default app;

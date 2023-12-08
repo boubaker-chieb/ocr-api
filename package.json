@@ -11,7 +11,8 @@
     "swagger": "tsoa spec",
     "predev": "npm run swagger",
     "prebuild": "npm run swagger",
-    "tsoa:generate": "tsoa routes"
+    "tsoa:generate": "tsoa routes",
+    "vercel-build": "echo hello"
   },
   "keywords": [],
   "author": "",
