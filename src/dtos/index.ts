@@ -1,1 +1,1 @@
-export {OcrDto}  from '~/dtos/ocr.dto';
+export {OcrDto}  from '../dtos/ocr.dto';
