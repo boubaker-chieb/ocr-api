@@ -1,5 +1,6 @@
 import { RecognizeResult } from "tesseract.js";
 
+
 export interface OcrDto {
   text?: string | null;
 }
