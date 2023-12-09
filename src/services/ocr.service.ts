@@ -1,6 +1,7 @@
 import { OcrDto } from "src/dtos";
 import { toOcrDTo } from "src/dtos/ocr.dto";
-import Tesseract from "tesseract.js";
+import Tesseract from "../../node_modules/tesseract.js";
+
 
 export class OcrService {
   public async scanImage(file: Express.Multer.File, language = 'eng'): Promise<OcrDto> {
