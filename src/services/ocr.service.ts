@@ -8,7 +8,7 @@ export class OcrService {
   public async scanImage(file: Express.Multer.File, language = 'eng'): Promise<OcrDto> {
 
    const worker  = createWorker({
-    langPath: language,
+    logger: m => console.log(m),
    });
   //  console.log(language)
   //   const ret: any = await Tesseract.recognize(file.buffer);
