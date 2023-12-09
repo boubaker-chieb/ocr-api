@@ -45,8 +45,14 @@
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui": "^5.10.3",
     "swagger-ui-express": "^5.0.0",
-    "tesseract-wasm": "^0.10.0",
     "tesseract.js": "^5.0.3",
     "tsoa": "^5.1.1"
+  },
+  "pkg": {
+    "assets": [
+    "node_modules/tesseract.js-core/tesseract-core-lstm.wasm",
+    "node_modules/tesseract.js-core/tesseract-core-simd-lstm.wasm",
+    "node_modules/tesseract.js-core/tesseract-core-simd.wasm"
+    ]
   }
 }
